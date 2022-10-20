@@ -1,0 +1,25 @@
+Ou450/jMR9oIfihe1Gvot9D5AibHOgxoOLNlh6gA
+
+key id  --> AKIAZ46BO6CISJDWTEZA
+
+
+aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 680621174929.dkr.ecr.us-east-1.amazonaws.com
+
+
+
+Steps:
+1.create aurora db and get the url for db
+2.Open IAM --> users--> user name->security credentials --> create access key and get the key id and secret access key
+open cmd--> aws configure -> key id ,access key,
+3.Create ECS with cluster and get the push commands
+
+
+docker tag estock-command:latest 680621174929.dkr.ecr.us-east-1.amazonaws.com/estock-command:latest
+
+docker push 680621174929.dkr.ecr.us-east-1.amazonaws.com/estock-command:latest
+
+
+1.Create elastic container registry repo and push the docker image to the repo
+2.create task with name 
+a.create a container with docker image url and add the logs
+3. create cluster with above created task then service will up and run
